@@ -8,12 +8,16 @@ def prompt
   print "db > "
 end
 
+vm = Sqr::VM.new
+
 loop do
   prompt
   input = gets.chomp
 
   if input == '.exit'
     exit(0)
+  elsif input == '.hello'
+    puts vm.hello
   else
     puts "Unrecognized command '#{input}'."
   end
